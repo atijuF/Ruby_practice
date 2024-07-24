@@ -56,3 +56,15 @@ puts ten_days_later
 # 1時間後
 one_hour_later = current_datetime + (1.0 / 24)
 puts one_hour_later
+
+in_minuts = 90.0 # 時間に変換したい分
+out_hour = 0.0 # 変換した時間部分
+out_minuts = 0.0 # 変換した分部分
+
+out_hour = in_minuts / 60 # 時間をとるため、60で割った商を得る……(1)
+
+out_hour = out_hour.floor # 商だけ残すために小数点以下を切り捨てる……(3)
+
+out_minutes = (in_minuts % 60) / 60 # 余りの分を取得する……(2)
+
+puts (out_hour + out_minutes)
